@@ -15,7 +15,7 @@ import java.util.List;
  * @Author: twc
  * @Date 2021/3/30 20:30
  **/
-public class test01_ReadConfig {
+public class test01_ReadConfigAndRun {
     /**
      * @Description
      * @Date 2021/3/30 20:31
