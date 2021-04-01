@@ -12,9 +12,12 @@
         <setting name = "cacheEnabled" value = "false" />
     </settings>-->
 
+    <typeAliases></typeAliases>
+
     <!-- 配置环境 -->
     <environments default="dev">
         <!-- 配置mysql的环境-->
+<!--         多数据源可以在这里配置-->
         <environment id="dev">
             <!-- 配置事务的类型-->
             <transactionManager type="JDBC"></transactionManager>

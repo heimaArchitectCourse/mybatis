@@ -103,6 +103,7 @@ public class XMLConfigBuilder extends BaseBuilder {
   private void parseConfiguration(XNode root) {
     try {
       // issue #117 read properties first
+      // 先读取  properties 属性信息
       propertiesElement(root.evalNode("properties"));
       Properties settings = settingsAsProperties(root.evalNode("settings"));
       loadCustomVfs(settings);
@@ -278,6 +279,7 @@ public class XMLConfigBuilder extends BaseBuilder {
         environment = context.getStringAttribute("default");
       }
       for (XNode child : context.getChildren()) {
+        //读取多数据源
         String id = child.getStringAttribute("id");
         if (isSpecifiedEnvironment(id)) {
           TransactionFactory txFactory = transactionManagerElement(child.evalNode("transactionManager"));
@@ -286,6 +288,8 @@ public class XMLConfigBuilder extends BaseBuilder {
           Environment.Builder environmentBuilder = new Environment.Builder(id)
               .transactionFactory(txFactory)
               .dataSource(dataSource);
+          //  设置数据源  目前来看 mybatis 只支持单数据源
+          System.out.println("设置Mybatis数据源");
           configuration.setEnvironment(environmentBuilder.build());
         }
       }

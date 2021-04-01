@@ -31,9 +31,9 @@
     
 
     <!-- 根据id查询-->
-    <select id="findUserById" resultType="com.itheima.pojo.User" parameterType="int" >
-        select * from user where id =  #{id}
-    </select>
+<!--    <select id="findUserById" resultType="com.itheima.pojo.User" parameterType="int" >-->
+<!--        select * from user where id =  #{id}-->
+<!--    </select>-->
 
 
 </mapper>

@@ -2,6 +2,7 @@ package com.itheima.dao;
 
 
 import com.itheima.pojo.User;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public interface UserMapper {
 
     void saveUser(User user);
 
-
+    @Select("select * from user where id=#{id}")
     User findUserById(Integer id);
 
     
